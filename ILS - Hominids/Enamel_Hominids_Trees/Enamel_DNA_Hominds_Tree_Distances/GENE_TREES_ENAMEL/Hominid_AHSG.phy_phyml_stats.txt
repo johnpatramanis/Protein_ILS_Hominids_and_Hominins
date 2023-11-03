@@ -1,0 +1,54 @@
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+                                  ---  PhyML 3.3.20211231  ---                                             
+                              http://www.atgc-montpellier.fr/phyml                                          
+                             Copyright CNRS - Universite Montpellier                                 
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+. Sequence filename: 			Hominid_AHSG.phy
+. Data set: 				#1
+. Random init tree: 			#3
+. Initial tree: 			random tree
+. Model of nucleotides substitution: 	GTR
+. Number of taxa: 			4
+. Log-likelihood: 			-13660.99574
+. Unconstrained log-likelihood: 	-13879.34217
+. Composite log-likelihood: 		-45722.56680
+. Parsimony: 				360
+. Tree size: 				0.04446
+. Discrete gamma model: 		Yes
+  - Number of classes: 			4
+  - Gamma shape parameter: 		382.584
+  - Relative rate in class 1: 		0.93578 [freq=0.250000] 		
+  - Relative rate in class 2: 		0.98266 [freq=0.250000] 		
+  - Relative rate in class 3: 		1.01584 [freq=0.250000] 		
+  - Relative rate in class 4: 		1.06571 [freq=0.250000] 		
+. Proportion of invariant: 		0.226
+. Nucleotides frequencies:
+  - f(A)=  0.27845
+  - f(C)=  0.23273
+  - f(G)=  0.24492
+  - f(T)=  0.24390
+. GTR relative rate parameters :
+  A <-> C    0.70283
+  A <-> G    2.99344
+  A <-> T    0.28433
+  C <-> G    0.73775
+  C <-> T    3.18533
+  G <-> T    1.00000
+. Instantaneous rate matrix : 
+  [A---------C---------G---------T------]
+  -0.87570   0.14827   0.66457   0.06286  
+   0.17740  -1.04542   0.16379   0.70423  
+   0.75557   0.15563  -1.13229   0.22109  
+   0.07177   0.67197   0.22201  -0.96574  
+
+
+. Run ID:				none
+. Random seed:				1686657545
+. Subtree patterns aliasing:		no
+. Version:				3.3.20211231
+. Time used:				0h0m0s (0 seconds)
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
