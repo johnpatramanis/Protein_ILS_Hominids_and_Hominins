@@ -1,0 +1,122 @@
+import os
+import random
+import sys
+
+from Bio import SeqIO
+
+
+
+FILES=os.listdir('./PER_PROTEIN/')
+
+path=sys.argv[1]
+
+if (os.path.exists(path)==False):
+    os.makedirs(path)
+
+
+#### Check if only a subset of the fastas are desired
+if (os.path.exists(sys.argv[1]+'Proteins.txt')==True):
+    Protein_Subset=[]
+    Protein_Subset_File=open(sys.argv[1]+'Proteins.txt','r')
+    for line in Protein_Subset_File:
+        line=line.strip()
+        Protein_Subset.append(line)
+
+
+African_Homo_Sapiens=[]
+IDs_File=open("./African_IDs_From_1KG.txt","r")
+IDs_File.readline()
+
+for line in IDs_File:
+    line=line.strip()
+    African_Homo_Sapiens.append(line)
+
+
+
+#### Only keep protein files with proteins to be used
+FILES = [x for x in FILES if x.split('_PROT_REFERENCE.fa')[0] in Protein_Subset]
+
+##### Go through protein fasta files (full reference)
+for FILE in FILES:
+    if '.fa' in FILE:
+        fasta_sequences = SeqIO.parse(open('./PER_PROTEIN/'+FILE),'fasta')
+        PROTEIN_NAME=FILE.split('_PROT_REFERENCE.fa')[0]
+        
+        ##### How many of each genus/species in new fasta
+        Human_Count=0
+        Neand_Count=0
+        Denisova_Count=0
+        Chimp_Count=0
+        
+        
+        
+        
+        ######## Shuffle sequence
+        FASTA_NAMES=[]
+        FASTA_SEQUENCES=[]
+        for fasta in fasta_sequences:
+            name, sequence = fasta.id, str(fasta.seq)
+            FASTA_NAMES.append(name)
+            FASTA_SEQUENCES.append(sequence)
+            
+         
+        arrangement=[x for x in range(0,len(FASTA_NAMES))]
+        random.shuffle(arrangement)
+
+        
+        
+        #### Go through fasta sequences
+        for fasta in arrangement:
+            check=False
+            
+            name = FASTA_NAMES[fasta]
+            sequence = FASTA_SEQUENCES[fasta]
+            
+            name=name.split('/')[0]
+            name=name.split('.')[0]
+            
+            SAMPLE_NAME=name
+            
+            
+            sequence=sequence.replace('X','-')
+            sequence=sequence.replace('?','-')
+            
+            DASH_COUNT=sequence.count('-')
+
+            if DASH_COUNT<len(sequence) and sequence!='':
+            
+          
+                if ( SAMPLE_NAME in African_Homo_Sapiens ) and (Human_Count==0):
+                    check=True
+                    Human_Count+=1
+                    name='HUM'
+                    print(SAMPLE_NAME)
+                
+                if ( ('troglod' in SAMPLE_NAME) ) and (Chimp_Count==0):
+                    check=True
+                    Chimp_Count+=1
+                    name='CHI'
+                    
+                if ( ('Nean' in SAMPLE_NAME) or ('Chagyr' in SAMPLE_NAME) or ('Vindija' in SAMPLE_NAME) ) and (Neand_Count==0):
+                    check=True
+                    Neand_Count+=1
+                    name='NEA'
+
+                if ( ('Denisov' in SAMPLE_NAME) ) and (Denisova_Count==0):
+                    check=True
+                    Denisova_Count+=1
+                    name='DEN'
+
+            if ( ('Protein_Subset' in locals()) or ('Protein_Subset' in globals())):
+                if PROTEIN_NAME not in Protein_Subset:
+                    check=False
+
+
+            if check==True:    
+                OUT_FILE_NAME=path.split('/')[1]
+                
+                PROTEIN_FASTA=open(F'./{path}/{OUT_FILE_NAME}_PROT_REFERENCE.fa','a')
+                print(F'Output Fasta file will be placed in: /{path}/{OUT_FILE_NAME}_PROT_REFERENCE.fa')
+                PROTEIN_FASTA.write('>'+name+'_'+PROTEIN_NAME+'\n')
+                PROTEIN_FASTA.write(sequence+'\n')
+                PROTEIN_FASTA.close()

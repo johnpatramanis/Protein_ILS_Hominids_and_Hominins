@@ -1,0 +1,134 @@
+###### CONDA ENVIRONMENT for Entropy_Calculations & Treedist: conda install -c conda-forge -c bioconda r-treedist snakemake biopython
+######
+
+import os
+import os.path
+from os import listdir
+from os.path import isfile, join, isdir
+
+
+###### Prepare Samples
+######################
+SAMPLES=[]
+PROTEIN_NUBMER_TO_REPS={}
+INPUT_LIST_FILE=open('../Input_File.txt','r')
+
+
+
+for line in INPUT_LIST_FILE:
+    line=line.strip().split()
+
+    PROTEIN_NUBMER_TO_REPS[int(line[0])]=int(line[1])
+
+for J,K in PROTEIN_NUBMER_TO_REPS.items():
+    for rep in range(0,K):
+        SAMPLES.append(F'REP-{rep}_{J}-PROTEINS_PROT_REFERENCE')
+
+
+SAMPLES=list(set(SAMPLES))
+
+print(SAMPLES)
+
+
+######################
+
+
+
+
+############################################################################################################################################################################################################################################################
+
+
+
+###### One Rule to Rule them ALL
+
+rule all:
+    input:
+        Input_True_Newick_Tree='Newick_Tree.txt', ### make sure it has the same tip-labels as the trees being generated
+        PaleoProPhyler_Output_Trees_ML=expand('../Dataset_Analysis/Workspace/2_DATASETS/{SAMPLE}/CONCATINATED/CONCATINATED_aln_e.phy_phyml_tree.txt',SAMPLE=SAMPLES),
+        Tree_Distance_Measurements=expand('{SAMPLE}/Tree_Distances.txt',SAMPLE=SAMPLES),
+        Alignment_Variation=expand('../Dataset_Analysis/Workspace/2_DATASETS/{SAMPLE}/CONCATINATED/Number_of_Variants.txt',SAMPLE=SAMPLES),
+        # Pypythia_scores=expand('../Dataset_Analysis/Workspace/2_DATASETS/{SAMPLE}/CONCATINATED/Pypythia_Score.txt',SAMPLE=SAMPLES),
+        # Entropies=expand('{SAMPLE}/Entropies.txt',SAMPLE=SAMPLES)
+
+
+
+
+##############################
+##### Step 1
+rule Prune_Output_CONCAT_Trees:
+    input:
+        Input_True_Newick_Tree='Newick_Tree.txt',
+        PaleoProPhyler_Output_Tree_ML='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/CONCATINATED_aln_e.phy_phyml_tree.txt',
+    output:
+        PaleoProPhyler_Pruned_Output_Tree_ML='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/CONCATINATED_aln_e.phy_phyml_tree_prunned.txt'
+    threads:1
+    run:
+        SAMPLE=wildcards.sample
+        #### Prune output Trees for very small branch lengths, this will create a polytomy when your data are instead creating a biforcating tree with tiny branches
+        shell(F'gotree collapse length -l 0.0000001 -i {input.PaleoProPhyler_Output_Tree_ML} -o {output.PaleoProPhyler_Pruned_Output_Tree_ML}  ')
+        
+    
+
+
+##############################
+##### Step 2
+rule Compare_Input_to_Output_CONCAT_Trees:
+    input:
+        Input_True_Newick_Tree='Newick_Tree.txt',
+        PaleoProPhyler_Pruned_Output_Tree_ML='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/CONCATINATED_aln_e.phy_phyml_tree_prunned.txt',
+    output:
+        Tree_Distance_Measurements='{sample}/Tree_Distances.txt'
+    threads:1
+    run:
+        SAMPLE=wildcards.sample
+        
+        #### Remove prexisitng sample folder
+        if os.path.isdir(F'{SAMPLE}')==True:
+            shell(F'rm -rf {SAMPLE}')
+
+        ##### Create anew
+        shell(F'mkdir {SAMPLE}')
+
+        shell(F'Rscript Tree_Dist.r {input.Input_True_Newick_Tree} {input.PaleoProPhyler_Pruned_Output_Tree_ML} {output.Tree_Distance_Measurements}')
+        
+    
+
+    
+        
+##############################
+##### Step 3 Calcualte Variation
+
+rule Generate_Variation_For_3_Groups:
+    input:
+        PaleoProPhyler_Output_Concat_Alignment='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/CONCATINATED_o.fa'
+    output:
+        Alignment_Variation='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/Number_of_Variants.txt'
+    threads:1
+    run:
+        To_Be_Removed='CHI' ### Should be a string, if multiple samples, sring with space between samples
+        shell(F'python3 ../Scripts/Calculate_Variation_Fasta.py {input.PaleoProPhyler_Output_Concat_Alignment} {To_Be_Removed}')
+
+
+
+
+
+
+#############################
+##### Bonus Step Calculate Pypythia difficulty scoring
+
+
+
+
+
+# rule Pypythia_for_alignment:
+    # input:
+        # PaleoProPhyler_Output_PHY_File='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/CONCATINATED_aln_e.phy',
+        
+    # output:
+        # Pypythia_Scrore='../Dataset_Analysis/Workspace/2_DATASETS/{sample}/CONCATINATED/Pypythia_Score.txt'
+    # threads:1
+    # run:        
+        # shell(F'pythia -m {input.PaleoProPhyler_Output_PHY_File} -r $HOME/anaconda3/envs/pypythia/bin/raxml-ng --removeDuplicates -o {output.Pypythia_Scrore} -t 1')
+
+
+
