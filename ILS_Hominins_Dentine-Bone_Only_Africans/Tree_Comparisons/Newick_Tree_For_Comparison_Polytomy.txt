@@ -1,0 +1,1 @@
+((HUM,GOR,CHI),PONG);
