@@ -1,0 +1,9 @@
+MMP20	1216 	0.9594995065789474	Adygei,Tu,Tuscan,Tujia,STU,MXL,Cambodian,Yakut,Mozabite,Palestinian,Orcadian,Dai,Brahui,Burusho,CDX,FIN,She,NorthernHan,Pima,Makrani,Sindhi,Druze,PJL,CLM,CEU,Oroqen,Balochi,Surui,Karitiana,Naxi,PEL,Hezhen,Pathan,Lahu,KHV,ITU,Russian,Japanese,Yi,Mongolian,Basque,Daur,Bedouin,Kalash,French,Uygur,PUR,Colombian,BergamoItalian,BEB,GBR,CHB,Sardinian,Maya,Xibo,GIH,Han,Miao,CHS,JPT,Hazara,TSI,IBS	Neanderthal,Denisova,none
+COL1A1	23 	0.9149556521739131	Pathan,Lahu,NorthernHan,CHB,Naxi,Han,Yakut,Miao,Palestinian,CHS,JPT,Bedouin,PEL,Hezhen	Neanderthal,none,Denisova
+COL17A1	2 	0.85087	KHV	none
+ODAM	32 	0.9693734375	Tu,ITU,PapuanHighlands,STU,BEB,PJL,GIH,PapuanSepik,Hazara,Bougainville	none,Denisova
+AMTN	22 	0.9839431818181819	ITU,STU,BEB,PJL,GIH	Denisova
+AMBN	27 	0.9679148148148149	Pathan,ITU,STU,BEB,Makrani,PJL,GIH	Denisova
+ALB	31 	0.9805538709677419	Pathan,ITU,PapuanHighlands,STU,BEB,PJL,PapuanSepik,Kalash,Bougainville	Denisova
+ENAM	2 	0.95931	STU	Denisova
+COL1A2	3 	0.80145	Druze,Uygur	none
