@@ -1,4 +1,3 @@
-# Protein_ILS_Hominids_and_Hominins
-Code for Protein ILS project
+# Assessing the potential of ancient protein sequences in the study of hominid evolution
 
-This repo contains all the code for Chapter 3
+This repository contains scripts to reproduce the analysis and results of the manuscript "Assessing the potential of ancient protein sequences in the study of hominid evolution".
