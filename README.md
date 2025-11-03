@@ -5,7 +5,7 @@ This repository contains scripts to reproduce some of the analysis and results o
 Specifically two main analyses, can be reprodecuded following the commands described in the Supplementary materials.
 
 
-**1)** The "Iterative Phylogenetic Analyses"
+**1) The "Iterative Phylogenetic Analyses"**
 
 In this analysis we investigated how the concatenation of different numbers and different combinations of 12 enamel and collagen type I proteins might affect the topology of the inferred consensus  tree. In each iteration of this analysis, we carry out a concatenation using a subset of proteins sampled from the full set of proteins, reflecting the fact that not all proteins in the full set might be available in practice. The subset ranges in size from 1 (a single protein recovered) to all proteins recovered (either 12 or 28, depending on the tested dataset). One representative individual per population or species is randomly chosen and included in the alignment, as ancient protein studies are often limited to single individuals that are made to represent an entire species. For each concatenation, we build a phylogenetic tree and record the resulting topology. We then compare it to the underlying population tree, as inferred from past DNA studies. In total, we do this over 1,000 iterations per each number of proteins, sampling different sets of proteins and different representative individuals, in each turn.
 
@@ -19,7 +19,7 @@ We performed the same iterative analysis on each of the following 6 datasets (fo
 
 
 
-**2)** The "Introgression Investigation"
+**2) The "Introgression Investigation"**
 
 
 
