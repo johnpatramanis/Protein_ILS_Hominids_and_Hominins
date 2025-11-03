@@ -11,12 +11,12 @@ In this analysis we investigated how the concatenation of different numbers and 
 
 We performed the same iterative analysis on each of the following 6 datasets (folders within this repository):
 
-**a)** ILS_Hominids: For this version of the analysis we utilised a dataset of 12 enamel and collagen type I proteins from 4 species: _Homo sapiens_, _Pan troglodytes_, _Gorilla gorilla_ and _Pongo abelii_ (outgroup). The list of proteins is the following:  AHSG, ALB, AMBN, AMELX, AMELY, AMTN, COL17A1, ENAM, MMP20, ODAM (enamel) COL1A1, COL1A2 (collagen type I). <br>
-**b)** ILS_Hominids_Only_Enamel: Same analysis as above, but this time the dataset was limited to only the 10 enamel proteins.<br>
+**a)** ILS_Hominids: For this version of the analysis we utilised a dataset of 12 enamel and collagen type I proteins from 4 species: _Homo sapiens_, _Pan troglodytes_, _Gorilla gorilla_ and _Pongo abelii_ (outgroup). The list of proteins is the following:  AHSG, ALB, AMBN, AMELX, AMELY, AMTN, COL17A1, ENAM, MMP20, ODAM (enamel) COL1A1, COL1A2 (collagen type I). 
+**b)** ILS_Hominids_Only_Enamel: Same analysis as above, but this time the dataset was limited to only the 10 enamel proteins.
 **c)** ILS_Hominins: For this version of the analysis we utilised a dataset, consisting of _Homo sapiens_, Neanderthals, Denisovans and _Pan troglodytes_ (outgroup).
-**d)** ILS_Hominins_Dentine-Bone: This dataset consisted in the protein sequences that are most often recovered from dentin or bone tissue. In choosing which proteins to include in this anaysis, we utilised the list provided by Ruther et al. 2022 \cite{ruther2022spin}, which includes 20 proteins utilised in species identification: COL1A1, COL1A2, COL2A1, COL3A1, COL4A4, AHSG, COL5A2, ALB, BGN, COL5A3, COL5A1, CHAD, COL22A1, COL11A2, SERPINF1, F2, COL11A1, LUM, COL12A1, POSTN. Four of these 20 proteins (COL1A1, COL1A2, AHSG and ALB) were already included in the original 12 proteins, leading to a final combined dataset of 28 proteins. 
-**e)** ILS_Hominins_Dentine-Bone_Only_Africans: 
-**f)** ILS_Hominins_Only Africans: 
+**d)** ILS_Hominins_Dentine-Bone: This dataset is the same as above (**c**), but expanded in the protein used, to incude 20 proteins that are most often recovered from dentin or bone tissue: COL1A1, COL1A2, COL2A1, COL3A1, COL4A4, AHSG, COL5A2, ALB, BGN, COL5A3, COL5A1, CHAD, COL22A1, COL11A2, SERPINF1, F2, COL11A1, LUM, COL12A1, POSTN. Four of these 20 proteins (COL1A1, COL1A2, AHSG and ALB) were already included in the original 12 proteins, leading to a final combined dataset of 28 proteins. 
+**e)** ILS_Hominins_Dentine-Bone_Only_Africans:  This dataset is the same as  **d**, but by sampling only from four present day human populations: Yoruba, Mende, Luhya and Mandinka. These African populations consist of mostly un-admixed representatives of _Homo sapiens_. 
+**f)** ILS_Hominins_Only Africans: This dataset is the same as  **c**, but by sampling only from four present day human populations: Yoruba, Mende, Luhya and Mandinka. These African populations consist of mostly un-admixed representatives of _Homo sapiens_. 
 
 
 **2) The "Introgression Investigation"**
