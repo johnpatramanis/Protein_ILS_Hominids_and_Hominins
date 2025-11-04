@@ -28,8 +28,9 @@ We assessed the impact of admixture, as a contributor to apparent tree discordan
 
 **Introgression_Investigation**: This folder contains two main subfolders - **Skov_et_al_2018** and **Chen_et_al_2020**. 
 
+<br>
+<br>
 
-
-**For the full description and instruction on the reproduction of the analysis, please see the Supplementary materials PDF file of the same manuscript (also in this repository here).**
+**For the full description and instructions on the reproduction of any analysis, please see the Supplementary materials PDF file (can be found in this repository here).**
 
 
