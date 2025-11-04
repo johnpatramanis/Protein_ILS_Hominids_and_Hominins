@@ -24,7 +24,7 @@ We performed the same iterative analysis on each of the following 6 datasets (fo
 
 **2) The "Introgression Investigation"**
 
-
+We assessed the impact of admixture, as a contributor to apparent tree discordance in the protein sequences of _Homo sapiens_, Neanderthals and Denisovans. We first identified how often the proteins under investigation here can be found within archaic-introgressed regions of present-day human genomes. We used previously reported archaic haplotypes found within two present-day human datasets (Skov et al. 2018d, Chen et al. 2020) to assess this. The details of our methodology can be found in the Supplementary Material-S4, which is also attached here as pdf.
 
 
 
