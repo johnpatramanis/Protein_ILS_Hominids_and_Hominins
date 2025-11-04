@@ -20,6 +20,8 @@ We performed the same iterative analysis on each of the following 6 datasets (fo
 **e)** **ILS_Hominins_Dentine-Bone_Only_Africans**:  This dataset is the same as  **d)**, but by sampling only from four present day human populations: Yoruba, Mende, Luhya and Mandinka. These African populations consist of mostly un-admixed representatives of _Homo sapiens_. <br>
 **f)** **ILS_Hominins_Only Africans**: This dataset is the same as  **c)**, but by sampling only from four present day human populations: Yoruba, Mende, Luhya and Mandinka. These African populations consist of mostly un-admixed representatives of _Homo sapiens_. <br>
 
+Wihtin each folder is a bash file named **Master_Script.sh** , which when executed will attempt to activate the necessary conda environmnets (see bottom of this page) and then run 3 snakemake scripts. Each snakemake script is tasked with performing a part of the Iterative analysis (asssembling the phylogenetic dataset, running the phylogenetic analysis on it and recording the resulting topology).
+
 <br>
 <br>
 
