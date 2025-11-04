@@ -31,6 +31,14 @@ We assessed the impact of admixture, as a contributor to apparent tree discordan
 <br>
 <br>
 
-**For the full description and instructions on the reproduction of any analysis, please see the Supplementary materials PDF file (which can be found in this repository here).**
+**Prerequisites**: Linux machine with necessary packages installed.
+All packages can be easily installed through Conda (required for code below) using the following commands:
 
+conda create -n Analyser  -c bioconda -c conda-forge snakemake phyml mafft mrbayes revbayes trimal bioconductor-shortread r-stringr r-data.table r-phyclust seqmagick
+conda create -n Entropy -c conda-forge -c bioconda biopython r-bio3d snakemake biopython
+
+<br>
+
+
+**For the full description and instructions on the reproduction of any analysis, please see the Supplementary materials PDF file (which can be found in this repository here).**
 
