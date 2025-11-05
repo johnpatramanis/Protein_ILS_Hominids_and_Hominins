@@ -41,6 +41,7 @@ A Linux machine (or server access to one) with all the necessary packages instal
 
 
 conda create -n Analyser  -c bioconda -c conda-forge snakemake phyml mafft mrbayes revbayes trimal bioconductor-shortread r-stringr r-data.table r-phyclust seqmagick
+
 conda create -n Entropy -c conda-forge -c bioconda biopython r-bio3d snakemake biopython
 
 <br>
