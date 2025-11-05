@@ -7,7 +7,7 @@ Specifically two main analyses, can be reproduced following the step-by-step com
 
 <br>
 
-**1) The "Iterative Phylogenetic Analyses"**
+**1) Files corresponding to "Iterative Phylogenetic Analyses" section of methods**
 
 In this analysis, we investigated how the concatenation of different numbers and different combinations of 12 enamel and collagen type I proteins might affect the topology of the inferred consensus  tree. In each iteration of this analysis, we carry out a concatenation using a subset of proteins sampled from the full set of proteins, reflecting the fact that not all proteins in the full set might be available in practice. The subset ranges in size from 1 (a single protein recovered) to all proteins recovered (either 12 or 28, depending on the tested dataset). One representative individual per population or species is randomly chosen and included in the alignment, as ancient protein studies are often limited to single individuals that are made to represent an entire species. For each concatenation, we build a phylogenetic tree and record the resulting topology. We then compare it to the underlying population tree, as inferred from past DNA studies. In total, we do this over 1,000 iterations per each number of proteins, sampling different sets of proteins and different representative individuals, in each turn.
 
@@ -25,7 +25,7 @@ Wihtin each folder is a bash file named **Master_Script.sh** , which when execut
 <br>
 <br>
 
-**2) The "Introgression Investigation"**
+**2) Files corresponding to "Introgression Investigation" section of methods**
 
 We assessed the impact of admixture, as a contributor to apparent tree discordance in the protein sequences of _Homo sapiens_, Neanderthals and Denisovans. We first identified how often the proteins under investigation here can be found within archaic-introgressed regions of present-day human genomes. We used previously reported archaic haplotypes found within two present-day human datasets (Skov et al. 2018, Chen et al. 2020) to assess this. The details of our methodology can be found in the Supplementary Material-S4, which is also attached here as pdf. The analysis can be repeated by following the steps described in the supplementary, in the folder below.
 
