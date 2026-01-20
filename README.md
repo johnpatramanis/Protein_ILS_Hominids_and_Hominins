@@ -40,7 +40,7 @@ We assessed the impact of admixture, as a contributor to apparent tree discordan
 A Linux machine (or server access to one) with all the necessary packages installed. The exact version of all pre-requisites can be seen within the two YML files in the repository (Entropy.yml and Analyser.yml), but all packages can be easily installed through [Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html). If conda is installed and running on your machine, simply use the following commands to download and prepare all pre-requisites:
 
 
-```conda create -n Analyser  -c bioconda -c conda-forge snakemake phyml mafft mrbayes revbayes trimal bioconductor-shortread r-stringr r-data.table r-phyclust seqmagick```
+```conda create -n Analyser  -c bioconda -c conda-forge snakemake phyml mafft trimal bioconductor-shortread r-stringr r-data.table r-phyclust seqmagick```
 
 ```conda create -n Entropy -c conda-forge -c bioconda biopython r-bio3d snakemake biopython```
 
